@@ -1,0 +1,11 @@
+### Find all users
+GET {{BASE_URL}}/users
+
+### Create new user
+POST {{BASE_URL}}/users
+Content-Type: application/json
+
+{
+  "email": "johndoe@test.com",
+  "password": "password"
+}
