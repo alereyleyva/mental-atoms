@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { signOut } from 'next-auth/react';
 
 export default function Home() {
   const [isRecording, setIsRecording] = useState<boolean>();
@@ -38,6 +39,7 @@ export default function Home() {
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       <h1 className={'text-2xl'}>Mental Atoms</h1>
+      <button onClick={() => signOut()}>Sign out</button>
       <span>{atom}</span>
       <button onClick={handleRecognition} disabled={isRecording}>
         {isRecording ? 'Stop' : 'Start'} mental atom
